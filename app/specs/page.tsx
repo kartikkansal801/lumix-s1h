@@ -226,7 +226,7 @@ export default function SpecsPage() {
                         <Store size={36} strokeWidth={1.5} className="text-white/80 mb-4" />
                         <h4 className="font-sans text-[16px] font-semibold text-white/90 mb-2">Ways to buy</h4>
                         <p className="font-sans text-[14px] text-white/60 mb-3 leading-relaxed">
-                            Choose the way that's<br />right for you.
+                            Choose the way that&apos;s<br />right for you.
                         </p>
                         <a href="#" className="font-sans text-[13px] text-[#004FD4] hover:underline hover:text-[#005aed] transition-colors">
                             Find a Retailer &gt;
@@ -267,11 +267,11 @@ export default function SpecsPage() {
                         *Listed pricing is Maximum Retail Price (inclusive of all taxes)
                     </p>
                     <ol className="font-sans text-[11px] text-[#86868b] leading-[1.6] list-decimal pl-4 space-y-2">
-                        <li>"Unlimited recording" applies when the camera is operated within the recommended temperature range and continuous recording is not interrupted by SD card capacity limits.</li>
+                        <li>&quot;Unlimited recording&quot; applies when the camera is operated within the recommended temperature range and continuous recording is not interrupted by SD card capacity limits.</li>
                         <li>6K resolution and 10-bit recording require high-speed SDXC UHS-II cards with a Video Speed Class 90 (V90) rating for optimal uninterrupted performance.</li>
-                        <li>V-Log/V-Gamut provides 14+ stops of dynamic range, assuming proper exposure and calibration in post-production using Panasonic's official LUTs.</li>
+                        <li>V-Log/V-Gamut provides 14+ stops of dynamic range, assuming proper exposure and calibration in post-production using Panasonic&apos;s official LUTs.</li>
                         <li>Battery life is approximate. Testing conducted by Panasonic using CIPA standards with the DMW-BLJ31 battery. Actual battery life varies significantly based on configuration, usage, recording formats, and environmental conditions.</li>
-                        <li>The phrase "Netflix Approved" means the Lumix S1H meets the strict image capture standards for primary camera use on Netflix Original Productions, as listed on the official Netflix Partner Help center.</li>
+                        <li>The phrase &quot;Netflix Approved&quot; means the Lumix S1H meets the strict image capture standards for primary camera use on Netflix Original Productions, as listed on the official Netflix Partner Help center.</li>
                         <li>Weather sealing (splash/dust/freeze resistant) does not guarantee that damage will not occur if this camera is subjected to direct contact with dust and water. Warranty does not cover liquid damage.</li>
                         <li>Firmware updates may add new features or alter existing functionalities. Please ensure you are running the latest firmware version v3.0 or higher for full described performance.</li>
                         <li>All established final assembly supplier sites are third-party verified as Zero Waste by UL LLC. Panasonic requires at least 90% diversion through methods other than waste to energy to achieve Zero Waste to Landfill designations.</li>

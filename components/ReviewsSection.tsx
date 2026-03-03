@@ -91,11 +91,11 @@ export default function ReviewsSection() {
                         <Star fill="none" stroke="#FACC15" size={14} />
                     </div>
                     <h4 className="font-sans text-[16px] font-semibold text-white/90 mb-2">
-                        Incredible image, but it's heavy
+                        Incredible image, but it&apos;s heavy
                     </h4>
                     <p className="font-sans text-[12px] text-white/40 mb-3">Sarah T. — Verified Buyer</p>
                     <p className="font-sans text-[14px] text-white/60 line-clamp-3 mb-4 leading-relaxed">
-                        The image quality and dual native ISO blow me away every time I use it. However, this is not a lightweight hybrid camera. It's essentially a cinema camera in a mirrorless body. The weight is considerable if you're flying it on a standard gimbal.
+                        The image quality and dual native ISO blow me away every time I use it. However, this is not a lightweight hybrid camera. It&apos;s essentially a cinema camera in a mirrorless body. The weight is considerable if you&apos;re flying it on a standard gimbal.
                     </p>
                     <div className="flex items-center gap-2 text-[12px] font-sans text-white/40 cursor-pointer hover:text-white/60">
                         <ThumbsUp size={14} /> 89 people found this helpful
@@ -135,12 +135,12 @@ export default function ReviewsSection() {
                     },
                     {
                         title: "Best mirrorless for video, bar none",
-                        text: "I shoot commercial real estate and events. The 10-bit color depth and lack of a recording limit are the reasons I switched from Sony. No more worrying during a 3-hour conference recording. Menus are also the best out of any brand I've used.",
+                        text: "I shoot commercial real estate and events. The 10-bit color depth and lack of a recording limit are the reasons I switched from Sony. No more worrying during a 3-hour conference recording. Menus are also the best out of any brand I&apos;ve used.",
                         stars: 5, author: "Alex R.", date: "4 months ago", helpful: 145
                     },
                     {
                         title: "Autofocus is just okay",
-                        text: "If you pull focus manually, this is a 5-star camera. But if you rely on continuous autofocus during run-and-gun shoots, the DFD contrast-detect AF will hunt occasionally. It's totally fine for studio work, but tracking fast subjects isn't its strong suit.",
+                        text: "If you pull focus manually, this is a 5-star camera. But if you rely on continuous autofocus during run-and-gun shoots, the DFD contrast-detect AF will hunt occasionally. It&apos;s totally fine for studio work, but tracking fast subjects isn&apos;t its strong suit.",
                         stars: 3, author: "Chris M.", date: "6 months ago", helpful: 201
                     }
                 ].map((review, i) => (

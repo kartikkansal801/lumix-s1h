@@ -12,10 +12,6 @@ const VARIANTS = [
     { label: 'With 24-105mm Lens', price: 379990, priceDisplay: '₹3,79,990' },
 ];
 
-const COLORS = [
-    { name: 'Black', hex: '#1a1a1a' },
-];
-
 const ACCESSORIES = [
     { name: 'DMW-BLJ31 Battery', price: 8990, priceDisplay: '₹8,990', image: '/project5/1.jpg' },
     { name: 'DMW-BTC15 Charger', price: 5990, priceDisplay: '₹5,990', image: '/project5/2.png' },
@@ -41,10 +37,6 @@ export default function OrderPage() {
         }, 4000);
         return () => clearInterval(timer);
     }, [images.length]);
-
-    // total price is not used right now but useful for future expansion UI
-    const totalPrice = VARIANTS[selectedVariant].price +
-        selectedAccessories.reduce((sum, a) => sum + a.price, 0);
 
     return (
         <div style={{ background: '#060606', minHeight: '100vh' }}>

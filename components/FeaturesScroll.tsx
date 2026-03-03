@@ -201,6 +201,7 @@ export default function FeaturesScroll() {
                             }}
                         >
                             {/* Background image — GPU composited, starts scaled out */}
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
                             <img
                                 className="feat-img"
                                 src={item.img}
