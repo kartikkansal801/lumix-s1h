@@ -74,7 +74,7 @@ export default function FeaturesCarousel() {
         let playAuto = true;
 
         const updateText = () => {
-            [eye, head, desc].forEach(el => { el.style.elOpacity = '0'; el.style.opacity = '0'; });
+            [eye, head, desc].forEach(el => { el.style.opacity = '0'; });
             head.style.transform = 'translateY(8px)';
             if (timeoutId) clearTimeout(timeoutId);
             timeoutId = setTimeout(() => {
