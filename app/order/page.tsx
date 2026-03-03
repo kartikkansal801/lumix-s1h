@@ -48,6 +48,7 @@ export default function OrderPage() {
 
     return (
         <div style={{ background: '#060606', minHeight: '100vh' }}>
+            <Navbar />
 
             {/* spacer to prevent overlap with sticky nav headers */}
             <div style={{ paddingTop: '64px' }}></div>

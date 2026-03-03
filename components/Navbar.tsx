@@ -9,7 +9,8 @@ import { CartContext } from "../context/CartContext";
 export default function Navbar() {
     const { scrollY } = useScroll();
     const pathname = usePathname();
-    const { cartCount, setCartOpen } = useContext(CartContext);
+    const { cartItems, setCartOpen } = useContext(CartContext);
+    const cartCount = cartItems.length;
     const [activeSection, setActiveSection] = useState("overview");
 
     // fade in after 60px scroll (Only applicable perfectly on root layout where hero exists)

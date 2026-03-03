@@ -106,6 +106,7 @@ const SPECS = [
 export default function SpecsPage() {
     return (
         <div style={{ background: '#060606', minHeight: '100vh', color: '#fff' }}>
+            <Navbar />
 
             {/* Hero header */}
             <div style={{
