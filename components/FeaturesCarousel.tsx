@@ -98,6 +98,9 @@ export default function FeaturesCarousel() {
         function resetAuto() {
             if (autoTimerId) clearInterval(autoTimerId);
             if (!playAuto) return;
+            // Disable auto-sliding on mobile viewports
+            if (window.innerWidth < 768) return;
+
             autoTimerId = setInterval(() => {
                 goTo((idx + 1) % SLIDES.length);
             }, 3500);
