@@ -39,7 +39,7 @@ export default function FeaturesCarousel() {
         track.style.gap = `${GAP}px`;
         track.style.padding = `0 ${PAD}px`;
 
-        let idx = 0, drag = false, x0 = 0, dx = 0;
+        let idx = 0, drag = false, x0 = 0, y0 = 0, dx = 0, isScrolling = false;
 
         // Build cards
         SLIDES.forEach(s => {
@@ -115,15 +115,40 @@ export default function FeaturesCarousel() {
             resetAuto();
         }
 
-        const s = (x: number) => { playAuto = false; resetAuto(); drag = true; x0 = x; dx = 0; if (track) { track.style.transition = 'none'; track.style.cursor = 'grabbing'; } };
-        const m = (x: number) => { if (!drag) return; dx = x - x0; setTrack(dx); };
-        const e = () => { if (!drag) return; drag = false; playAuto = true; resetAuto(); if (track) track.style.cursor = 'grab'; if (dx < -60) goTo(idx + 1); else if (dx > 60) goTo(idx - 1); else goTo(idx); };
+        const s = (x: number, y: number) => { playAuto = false; resetAuto(); drag = true; x0 = x; y0 = y; dx = 0; isScrolling = false; if (track) { track.style.transition = 'none'; track.style.cursor = 'grabbing'; } };
+        const m = (x: number, y: number) => {
+            if (!drag) return;
+            const curDx = x - x0;
+            const curDy = y - y0;
+            if (!isScrolling) {
+                // Determine if swipe is primarily vertical
+                if (Math.abs(curDy) > Math.abs(curDx)) {
+                    drag = false;
+                    return;
+                }
+                isScrolling = true;
+            }
+            dx = curDx;
+            setTrack(dx);
+        };
+        const e = () => {
+            if (!drag) {
+                playAuto = true;
+                resetAuto();
+                return;
+            }
+            drag = false; playAuto = true; resetAuto();
+            if (track) track.style.cursor = 'grab';
+            if (dx < -60) goTo(idx + 1);
+            else if (dx > 60) goTo(idx - 1);
+            else goTo(idx);
+        };
 
-        const onMouseDown = (ev: MouseEvent) => s(ev.clientX);
-        const onMouseMove = (ev: MouseEvent) => { if (drag) m(ev.clientX); };
+        const onMouseDown = (ev: MouseEvent) => s(ev.clientX, ev.clientY);
+        const onMouseMove = (ev: MouseEvent) => { if (drag) m(ev.clientX, ev.clientY); };
         const onMouseUp = () => e();
-        const onTouchStart = (ev: TouchEvent) => s(ev.touches[0].clientX);
-        const onTouchMove = (ev: TouchEvent) => m(ev.touches[0].clientX);
+        const onTouchStart = (ev: TouchEvent) => s(ev.touches[0].clientX, ev.touches[0].clientY);
+        const onTouchMove = (ev: TouchEvent) => m(ev.touches[0].clientX, ev.touches[0].clientY);
         const onTouchEnd = () => e();
         const onKeyDown = (ev: KeyboardEvent) => { playAuto = false; resetAuto(); if (ev.key === 'ArrowRight') goTo(idx + 1); if (ev.key === 'ArrowLeft') goTo(idx - 1); };
         const onResize = () => { if (track) track.style.transition = 'none'; setTrack(); };
@@ -156,15 +181,15 @@ export default function FeaturesCarousel() {
 
     return (
         <section id="features-carousel" className="relative bg-[#060606] py-16 md:py-[96px] overflow-hidden">
-            <div className="max-w-[1200px] mx-auto px-6 md:px-16 mb-8 md:mb-10 text-center">
+            <div className="max-w-[1200px] mx-auto px-6 md:px-16 mb-8 md:mb-10 text-center min-h-[140px] md:min-h-[160px]">
                 <p ref={eyeRef} id="c-eye" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: '11px', fontWeight: 700, color: '#004FD4', letterSpacing: '0.20em', textTransform: 'uppercase', margin: '0 0 14px 0', transition: 'opacity 0.3s ease' }}></p>
                 <h2 ref={headRef} id="c-head" style={{ fontFamily: "'SF Pro Display','DM Sans',-apple-system,sans-serif", fontSize: 'clamp(34px,5vw,68px)', fontWeight: 700, color: 'rgba(255,255,255,0.92)', letterSpacing: '-0.04em', lineHeight: 1.06, margin: 0, whiteSpace: 'pre-line', transition: 'opacity 0.3s ease,transform 0.3s cubic-bezier(0.16,1,0.3,1)' }}></h2>
             </div>
             <div style={{ position: 'relative', width: '100%', overflow: 'hidden' }}>
-                <div ref={trackRef} id="c-track" style={{ display: 'flex', transition: 'transform 0.55s cubic-bezier(0.16,1,0.3,1)', willChange: 'transform', cursor: 'grab', userSelect: 'none' }}></div>
+                <div ref={trackRef} id="c-track" style={{ display: 'flex', transition: 'transform 0.55s cubic-bezier(0.16,1,0.3,1)', willChange: 'transform', cursor: 'grab', userSelect: 'none', touchAction: 'pan-y' }}></div>
             </div>
             <div ref={dotsRef} id="c-dots" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', marginTop: '28px' }}></div>
-            <p ref={descRef} id="c-desc" className="px-6 md:px-8" style={{ fontFamily: "'SF Pro Text','DM Sans',-apple-system,sans-serif", fontSize: '15px', color: 'rgba(255,255,255,0.52)', textAlign: 'center', maxWidth: '560px', margin: '18px auto 0', lineHeight: 1.65, transition: 'opacity 0.3s ease' }}></p>
+            <p ref={descRef} id="c-desc" className="px-6 md:px-8 min-h-[100px] md:min-h-[80px]" style={{ fontFamily: "'SF Pro Text','DM Sans',-apple-system,sans-serif", fontSize: '15px', color: 'rgba(255,255,255,0.52)', textAlign: 'center', maxWidth: '560px', margin: '18px auto 0', lineHeight: 1.65, transition: 'opacity 0.3s ease' }}></p>
         </section>
     );
 }
