@@ -12,6 +12,7 @@ export default function ExplodedExperience() {
     const beatBRef = useRef<HTMLDivElement>(null);
     const beatCRef = useRef<HTMLDivElement>(null);
     const beatDRef = useRef<HTMLDivElement>(null);
+    const isActiveRef = useRef(false);
 
     const [loadedCount, setLoadedCount] = useState(0);
     const [isLoaded, setIsLoaded] = useState(false);
@@ -49,6 +50,15 @@ export default function ExplodedExperience() {
             showBeat(beatCRef, p >= 0.55 && p < 0.80, '-40px', '0px');
             showBeat(beatDRef, p >= 0.80 && p <= 1.00, '40px', '0px');
         });
+
+        const container = containerRef.current;
+        if (container) {
+            const obs = new IntersectionObserver(entries => {
+                isActiveRef.current = entries[0].isIntersecting;
+            }, { rootMargin: '100% 0px' });
+            obs.observe(container);
+            return () => { unsub(); obs.disconnect(); };
+        }
         return () => unsub();
     }, [scrollYProgress]);
 
@@ -111,15 +121,17 @@ export default function ExplodedExperience() {
         let lastDrawnIndex = -1;
 
         const renderLoop = () => {
-            currentFrameFloatRef.current += (targetFrameRef.current - currentFrameFloatRef.current) * 0.10;
-            const frameIndex = Math.min(Math.round(currentFrameFloatRef.current), TOTAL_FRAMES_S2 - 1);
+            if (isActiveRef.current) {
+                currentFrameFloatRef.current += (targetFrameRef.current - currentFrameFloatRef.current) * 0.10;
+                const frameIndex = Math.min(Math.round(currentFrameFloatRef.current), TOTAL_FRAMES_S2 - 1);
 
-            if (frameIndex !== lastDrawnIndex && framesRef.current[frameIndex]) {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                // Draw image to cover
-                const img = framesRef.current[frameIndex];
-                ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-                lastDrawnIndex = frameIndex;
+                if (frameIndex !== lastDrawnIndex && framesRef.current[frameIndex]) {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    // Draw image to cover
+                    const img = framesRef.current[frameIndex];
+                    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                    lastDrawnIndex = frameIndex;
+                }
             }
 
             animFrameId = requestAnimationFrame(renderLoop);

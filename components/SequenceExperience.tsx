@@ -8,6 +8,7 @@ const TOTAL_FRAMES = 147;
 export default function SequenceExperience() {
     const containerRef = useRef<HTMLDivElement>(null);
     const canvasRef = useRef<HTMLCanvasElement>(null);
+    const isActiveRef = useRef(false);
 
     const [loadedCount, setLoadedCount] = useState(0);
     const [isLoaded, setIsLoaded] = useState(false);
@@ -28,6 +29,15 @@ export default function SequenceExperience() {
         const unsub = scrollYProgress.on("change", (v) => {
             targetFrameRef.current = Math.round(v * (TOTAL_FRAMES - 1));
         });
+
+        const container = containerRef.current;
+        if (container) {
+            const obs = new IntersectionObserver(entries => {
+                isActiveRef.current = entries[0].isIntersecting;
+            }, { rootMargin: '100% 0px' });
+            obs.observe(container);
+            return () => { unsub(); obs.disconnect(); };
+        }
         return () => unsub();
     }, [scrollYProgress]);
 
@@ -83,13 +93,15 @@ export default function SequenceExperience() {
         let lastDrawnIndex = -1;
 
         const renderLoop = () => {
-            currentFrameFloatRef.current += (targetFrameRef.current - currentFrameFloatRef.current) * 0.10;
-            const frameIndex = Math.min(Math.round(currentFrameFloatRef.current), TOTAL_FRAMES - 1);
+            if (isActiveRef.current) {
+                currentFrameFloatRef.current += (targetFrameRef.current - currentFrameFloatRef.current) * 0.10;
+                const frameIndex = Math.min(Math.round(currentFrameFloatRef.current), TOTAL_FRAMES - 1);
 
-            if (frameIndex !== lastDrawnIndex && framesRef.current[frameIndex]) {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                ctx.drawImage(framesRef.current[frameIndex], 0, 0, canvas.width, canvas.height);
-                lastDrawnIndex = frameIndex;
+                if (frameIndex !== lastDrawnIndex && framesRef.current[frameIndex]) {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    ctx.drawImage(framesRef.current[frameIndex], 0, 0, canvas.width, canvas.height);
+                    lastDrawnIndex = frameIndex;
+                }
             }
 
             animFrameId = requestAnimationFrame(renderLoop);
