@@ -18,16 +18,7 @@ export default function FeaturesIntro() {
     return (
         <>
             {/* BLOCK 1 — APPLE-STYLE CENTERED TEXT PARAGRAPH */}
-            <section id="product-statement" style={{
-                width: '100%',
-                padding: '72px 32px 48px 32px',
-                backgroundColor: '#060606',
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                textAlign: 'center',
-                marginTop: '40px'
-            }}>
+            <section id="product-statement" className="w-full px-6 py-12 md:px-8 md:pt-[72px] md:pb-12 bg-[#060606] flex flex-col items-center text-center mt-10">
                 {/* Buy button */}
                 <a href="/order" style={{
                     display: 'inline-block',
@@ -76,12 +67,8 @@ export default function FeaturesIntro() {
             </section>
 
             {/* BLOCK 2 — FEATURES HEADLINE */}
-            <section id="features-header" style={{
-                width: '100%',
-                padding: '32px 0 24px 0',
-                backgroundColor: '#060606'
-            }}>
-                <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 64px' }}>
+            <section id="features-header" className="w-full py-8 bg-[#060606]">
+                <div className="max-w-[1200px] mx-auto px-6 md:px-16">
                     {/* Eyebrow */}
                     <p className="reveal-up" style={{
                         fontFamily: 'var(--font-mono)',

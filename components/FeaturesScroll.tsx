@@ -231,19 +231,7 @@ export default function FeaturesScroll() {
                             />
 
                             {/* Text content block — bottom left */}
-                            <div
-                                style={{
-                                    position: "absolute",
-                                    bottom: 0,
-                                    left: 0,
-                                    right: 0,
-                                    padding: "0 56px 56px 56px",
-                                    display: "flex",
-                                    alignItems: "flex-end",
-                                    justifyContent: "space-between",
-                                    zIndex: 10,
-                                }}
-                            >
+                            <div className="absolute bottom-0 left-0 right-0 p-6 md:px-14 md:pb-14 flex flex-col md:flex-row items-start md:items-end justify-between gap-8 md:gap-0 z-10">
                                 {/* Left: eyebrow + title + body */}
                                 <div style={{ maxWidth: "480px" }}>
                                     <p
@@ -282,7 +270,7 @@ export default function FeaturesScroll() {
                                         className="feat-body"
                                         style={{
                                             fontFamily: "var(--font-text)",
-                                            fontSize: "clamp(13px, 1.1vw, 16px)",
+                                            fontSize: "clamp(14px, 1.5vw, 16px)",
                                             color: "rgba(255,255,255,0.58)",
                                             lineHeight: 1.7,
                                             margin: 0,

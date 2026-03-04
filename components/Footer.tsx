@@ -4,19 +4,11 @@ import React from "react";
 
 export default function Footer() {
     return (
-        <footer style={{
-            background: '#060606',
-            padding: '80px 64px 40px',
-        }}>
-            <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+        <footer className="bg-[#060606] px-6 py-12 md:px-16 md:py-20">
+            <div className="max-w-[1200px] mx-auto">
 
                 {/* Top grid — 4 columns */}
-                <div style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(4, 1fr)',
-                    gap: '48px',
-                    margin: '0 0 64px 0',
-                }}>
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 mb-16">
                     {[
                         {
                             heading: 'Shop',
@@ -62,13 +54,7 @@ export default function Footer() {
                 </div>
 
                 {/* Bottom row — legal */}
-                <div style={{
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'flex-start',
-                    flexWrap: 'wrap',
-                    gap: '24px',
-                }}>
+                <div className="flex flex-col lg:flex-row justify-between items-start gap-8">
                     {/* Left — legal notes*/}
                     <div style={{ maxWidth: '600px' }}>
                         {[
@@ -88,9 +74,9 @@ export default function Footer() {
                     </div>
 
                     {/* Right — copyright + social */}
-                    <div style={{ textAlign: 'right' }}>
+                    <div className="text-left lg:text-right w-full lg:w-auto mt-8 lg:mt-0">
                         {/* Social icons */}
-                        <div style={{ display: 'flex', gap: '16px', justifyContent: 'flex-end', marginBottom: '20px' }}>
+                        <div className="flex gap-4 justify-start lg:justify-end mb-6">
                             <a href="#" style={{ color: 'rgba(255,255,255,0.40)', transition: 'color 0.2s' }}
                                 onMouseEnter={e => e.currentTarget.style.color = 'rgba(255,255,255,0.88)'}
                                 onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.40)'}>

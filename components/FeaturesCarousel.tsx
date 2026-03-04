@@ -30,7 +30,15 @@ export default function FeaturesCarousel() {
         track.innerHTML = '';
         dots.innerHTML = '';
 
-        const CARD_VW = 75, PEEK = 120, GAP = 20, PAD = 64;
+        const isMobile = window.innerWidth < 768;
+        const CARD_VW = isMobile ? 85 : 75;
+        const PEEK = isMobile ? 40 : 120;
+        const GAP = isMobile ? 12 : 20;
+        const PAD = isMobile ? 24 : 64;
+
+        track.style.gap = `${GAP}px`;
+        track.style.padding = `0 ${PAD}px`;
+
         let idx = 0, drag = false, x0 = 0, dx = 0;
 
         // Build cards
@@ -144,16 +152,16 @@ export default function FeaturesCarousel() {
     }, []);
 
     return (
-        <section id="features-carousel" className="relative" style={{ background: '#060606', padding: '72px 0 96px 0', overflow: 'hidden' }}>
-            <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 64px', marginBottom: '36px', textAlign: 'center' }}>
+        <section id="features-carousel" className="relative bg-[#060606] py-16 md:py-[96px] overflow-hidden">
+            <div className="max-w-[1200px] mx-auto px-6 md:px-16 mb-8 md:mb-10 text-center">
                 <p ref={eyeRef} id="c-eye" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: '11px', fontWeight: 700, color: '#004FD4', letterSpacing: '0.20em', textTransform: 'uppercase', margin: '0 0 14px 0', transition: 'opacity 0.3s ease' }}></p>
                 <h2 ref={headRef} id="c-head" style={{ fontFamily: "'SF Pro Display','DM Sans',-apple-system,sans-serif", fontSize: 'clamp(34px,5vw,68px)', fontWeight: 700, color: 'rgba(255,255,255,0.92)', letterSpacing: '-0.04em', lineHeight: 1.06, margin: 0, whiteSpace: 'pre-line', transition: 'opacity 0.3s ease,transform 0.3s cubic-bezier(0.16,1,0.3,1)' }}></h2>
             </div>
             <div style={{ position: 'relative', width: '100%', overflow: 'hidden' }}>
-                <div ref={trackRef} id="c-track" style={{ display: 'flex', gap: '20px', padding: '0 64px', transition: 'transform 0.55s cubic-bezier(0.16,1,0.3,1)', willChange: 'transform', cursor: 'grab', userSelect: 'none' }}></div>
+                <div ref={trackRef} id="c-track" style={{ display: 'flex', transition: 'transform 0.55s cubic-bezier(0.16,1,0.3,1)', willChange: 'transform', cursor: 'grab', userSelect: 'none' }}></div>
             </div>
             <div ref={dotsRef} id="c-dots" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', marginTop: '28px' }}></div>
-            <p ref={descRef} id="c-desc" style={{ fontFamily: "'SF Pro Text','DM Sans',-apple-system,sans-serif", fontSize: '15px', color: 'rgba(255,255,255,0.52)', textAlign: 'center', maxWidth: '560px', margin: '18px auto 0', lineHeight: 1.65, padding: '0 32px', transition: 'opacity 0.3s ease' }}></p>
+            <p ref={descRef} id="c-desc" className="px-6 md:px-8" style={{ fontFamily: "'SF Pro Text','DM Sans',-apple-system,sans-serif", fontSize: '15px', color: 'rgba(255,255,255,0.52)', textAlign: 'center', maxWidth: '560px', margin: '18px auto 0', lineHeight: 1.65, transition: 'opacity 0.3s ease' }}></p>
         </section>
     );
 }

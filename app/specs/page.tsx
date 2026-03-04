@@ -109,14 +109,7 @@ export default function SpecsPage() {
             <Navbar />
 
             {/* Hero header */}
-            <div style={{
-                padding: '120px 64px 80px',
-                maxWidth: '1200px', margin: '0 auto',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                gap: '80px',
-            }}>
+            <div className="pt-24 pb-12 px-6 md:pt-[120px] md:pb-[80px] md:px-[64px] max-w-[1200px] mx-auto flex flex-col md:flex-row items-center justify-between gap-12 md:gap-[80px]">
                 {/* Text Side */}
                 <div style={{ flex: 1 }}>
                     <p style={{
@@ -153,29 +146,14 @@ export default function SpecsPage() {
             </div>
 
             {/* Two-column layout: sidebar + content */}
-            <div style={{
-                maxWidth: '1200px', margin: '0 auto',
-                display: 'grid',
-                gridTemplateColumns: '220px 1fr',
-                gap: '80px',
-                padding: '64px 64px 120px',
-                alignItems: 'start',
-            }}>
+            <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-[220px_1fr] gap-8 md:gap-[80px] p-6 md:p-[64px] md:pb-[120px] items-start">
 
                 {/* Sticky sidebar — category jump links */}
-                <div style={{ position: 'sticky', top: '80px' }}>
+                <div className="md:sticky md:top-[80px] flex flex-row md:flex-col overflow-x-auto md:overflow-visible gap-6 md:gap-0 pb-4 md:pb-0 hide-scrollbar">
                     {SPECS.map(s => (
-                        <a key={s.category} href={`#spec-${s.category.toLowerCase().replace(/\s+/g, '-')}`} style={{
-                            display: 'block',
-                            fontFamily: "'SF Pro Text','DM Sans',-apple-system,sans-serif",
-                            fontSize: '13px', color: 'rgba(255,255,255,0.45)',
-                            textDecoration: 'none', padding: '8px 0',
-                            borderLeft: '2px solid rgba(255,255,255,0.08)',
-                            paddingLeft: '16px',
-                            transition: 'color 0.2s ease, border-color 0.2s ease',
-                        }}
-                            onMouseEnter={e => { e.currentTarget.style.color = 'rgba(255,255,255,0.88)'; e.currentTarget.style.borderLeftColor = '#004FD4'; }}
-                            onMouseLeave={e => { e.currentTarget.style.color = 'rgba(255,255,255,0.45)'; e.currentTarget.style.borderLeftColor = 'rgba(255,255,255,0.08)'; }}
+                        <a key={s.category} href={`#spec-${s.category.toLowerCase().replace(/\s+/g, '-')}`} className="whitespace-nowrap md:whitespace-normal block font-sans text-[13px] text-white/45 no-underline py-2 md:py-2 md:pl-4 border-b-2 md:border-b-0 md:border-l-2 border-white/10 transition-colors"
+                            onMouseEnter={e => { e.currentTarget.style.color = 'rgba(255,255,255,0.88)'; e.currentTarget.style.borderColor = '#004FD4'; }}
+                            onMouseLeave={e => { e.currentTarget.style.color = 'rgba(255,255,255,0.45)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'; }}
                         >{s.category}</a>
                     ))}
                 </div>
@@ -195,12 +173,7 @@ export default function SpecsPage() {
                             }}>{section.category}</h2>
 
                             {section.items.map((item, i) => (
-                                <div key={i} style={{
-                                    display: 'grid',
-                                    gridTemplateColumns: '200px 1fr',
-                                    gap: '24px',
-                                    padding: '16px 0',
-                                }}>
+                                <div key={i} className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-2 md:gap-6 py-4">
                                     <span style={{
                                         fontFamily: "'SF Pro Text','DM Sans',-apple-system,sans-serif",
                                         fontSize: '14px', color: 'rgba(255,255,255,0.40)',
@@ -218,7 +191,7 @@ export default function SpecsPage() {
             </div>
 
             {/* Apple-style Support & Buy section */}
-            <div className="max-w-[1200px] mx-auto px-16 pb-16 pt-8">
+            <div className="max-w-[1200px] mx-auto px-6 md:px-16 pb-16 pt-8">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
 
                     {/* Block 1 */}
@@ -262,7 +235,7 @@ export default function SpecsPage() {
 
             {/* Apple-style Final Notes / Fine Print section */}
             <div className="bg-[#0b0b0e] pt-12 pb-16">
-                <div className="max-w-[1200px] mx-auto px-16">
+                <div className="max-w-[1200px] mx-auto px-6 md:px-16">
                     <p className="font-sans text-[11px] text-[#86868b] leading-[1.6] mb-4">
                         *Listed pricing is Maximum Retail Price (inclusive of all taxes)
                     </p>

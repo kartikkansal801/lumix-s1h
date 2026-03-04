@@ -45,17 +45,10 @@ export default function OrderPage() {
             {/* spacer to prevent overlap with sticky nav headers */}
             <div style={{ paddingTop: '64px' }}></div>
 
-            <div style={{
-                maxWidth: '1200px', margin: '0 auto',
-                padding: '100px 64px 120px',
-                display: 'grid',
-                gridTemplateColumns: '1fr 420px',
-                gap: '80px',
-                alignItems: 'start',
-            }}>
+            <div className="max-w-[1200px] mx-auto px-6 md:px-16 pt-8 pb-16 md:pt-[100px] md:pb-[120px] grid grid-cols-1 lg:grid-cols-[1fr_420px] gap-12 lg:gap-[80px] items-start">
 
                 {/* LEFT — Product image carousel */}
-                <div style={{ position: 'sticky', top: '120px' }}>
+                <div className="lg:sticky lg:top-[120px]">
 
                     <div className="relative w-full aspect-[4/3] rounded-[20px] overflow-hidden group border border-white/5 bg-white/[0.01]">
                         <img
@@ -386,7 +379,7 @@ export default function OrderPage() {
             </div>
 
             {/* Key Features Full Width */}
-            <div className="max-w-[1200px] mx-auto px-16 pb-24">
+            <div className="max-w-[1200px] mx-auto px-6 md:px-16 pb-24">
                 <div className="flex justify-between items-center mb-10 pb-6">
                     <h2 className="font-sans text-[24px] font-bold tracking-tight text-white/90 m-0">Key Features</h2>
                     <ChevronUp className="text-white/60 cursor-pointer" size={24} />

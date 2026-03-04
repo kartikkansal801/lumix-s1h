@@ -120,7 +120,7 @@ export default function ImageQualityVideo() {
                 {/* Timer pill */}
                 <div ref={timerRef} id="iq-timer" style={{
                     position: 'absolute',
-                    top: '20px',
+                    top: '16px',
                     left: '50%',
                     transform: 'translateX(-50%)',
                     background: '#004FD4',
@@ -136,7 +136,7 @@ export default function ImageQualityVideo() {
                 }}>00:00:00</div>
 
                 {/* Right-side control pill */}
-                <div style={{
+                <div className="hidden md:flex flex-col gap-2.5" style={{
                     position: 'absolute',
                     right: '24px',
                     top: '50%',
@@ -146,9 +146,6 @@ export default function ImageQualityVideo() {
                     WebkitBackdropFilter: 'blur(12px)',
                     borderRadius: '48px',
                     padding: '12px',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '10px',
                     border: '1px solid rgba(255,255,255,0.08)'
                 }}>
                     {/* Stop button */}
@@ -194,15 +191,14 @@ export default function ImageQualityVideo() {
                 </div>
 
                 {/* Bottom-right circular play button */}
-                <button onClick={togglePlayPause} style={{
+                <button className="md:hidden flex items-center justify-center" onClick={togglePlayPause} style={{
                     position: 'absolute',
-                    bottom: '20px', right: '24px',
+                    bottom: '16px', right: '20px',
                     width: '40px', height: '40px',
                     borderRadius: '50%',
                     background: 'rgba(0,0,0,0.35)',
                     border: '1.5px solid rgba(255,255,255,0.60)',
                     cursor: 'pointer',
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
                     transition: 'background 0.2s, transform 0.2s'
                 }}
                     onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.12)'; e.currentTarget.style.transform = 'scale(1.08)'; }}
@@ -235,7 +231,7 @@ export default function ImageQualityVideo() {
             </div>
 
             {/* Body copy below video */}
-            <div style={{ maxWidth: '680px', margin: '52px auto 100px', padding: '0 32px', textAlign: 'center' }}>
+            <div className="max-w-[680px] mx-auto mt-12 mb-16 md:mb-[100px] px-6 text-center">
                 <p className="reveal-up" style={{
                     fontFamily: "'SF Pro Text', 'DM Sans', -apple-system, sans-serif",
                     fontSize: 'clamp(15px, 1.6vw, 18px)',

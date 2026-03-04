@@ -211,7 +211,7 @@ export default function SequenceExperience() {
                         {/* Beat 1: Hero */}
                         <motion.div
                             style={{ opacity: beat1Opacity, y: beat1Y }}
-                            className="absolute left-0 right-0 bottom-[5%] md:bottom-[8%] flex flex-col items-center text-center px-4"
+                            className="absolute left-4 right-4 md:left-0 md:right-0 bottom-8 md:bottom-[8%] flex flex-col items-center text-center"
                         >
                             <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, ease: "easeOut" }} className="text-[#004FD4] font-mono text-[12px] tracking-widest mb-4">PANASONIC LUMIX S1H</motion.div>
                             <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }} className="text-[38px] md:text-[48px] lg:text-[56px] font-bold leading-tight mb-6">Cinema in your hands.</motion.h1>
@@ -223,11 +223,11 @@ export default function SequenceExperience() {
                         {/* Beat 2: Engineering Reveal */}
                         <motion.div
                             style={{ opacity: beat2Opacity, x: beat2X }}
-                            className="absolute left-8 md:left-[10%] bottom-[5%] md:bottom-[8%] max-w-md"
+                            className="absolute left-6 right-6 md:left-[10%] md:right-auto bottom-8 md:bottom-[8%] md:max-w-md"
                         >
                             <div className="text-[#004FD4] font-mono text-[12px] tracking-widest mb-4 uppercase">BODY ARCHITECTURE</div>
                             <h2 className="text-[28px] md:text-[36px] lg:text-[44px] font-bold leading-[1.1] mb-6">Engineered for the<br /> uncompromising frame.</h2>
-                            <p className="text-white/55 text-[17px] mb-4">
+                            <p className="text-white/55 text-[14px] md:text-[17px] mb-4">
                                 A precision-machined magnesium alloy chassis.<br />
                                 Dust, splash, and freeze-resistant to –10°C.<br />
                                 Built to survive the conditions your story demands.
@@ -237,11 +237,11 @@ export default function SequenceExperience() {
                         {/* Beat 3: Internal Systems Reveal */}
                         <motion.div
                             style={{ opacity: beat3Opacity, x: beat3X }}
-                            className="absolute right-8 md:right-[10%] bottom-[5%] md:bottom-[8%] max-w-md text-right flex flex-col items-end"
+                            className="absolute left-6 right-6 md:left-auto md:right-[10%] bottom-8 md:bottom-[8%] md:max-w-md text-right flex flex-col items-end"
                         >
                             <div className="text-[#F0A500] font-mono text-[12px] tracking-widest mb-4 uppercase">INTERNAL SYSTEMS</div>
                             <h2 className="text-[28px] md:text-[36px] lg:text-[44px] font-bold leading-[1.1] mb-6">Every component,<br /> a deliberate choice.</h2>
-                            <p className="text-white/55 text-[17px]">
+                            <p className="text-white/55 text-[14px] md:text-[17px]">
                                 Phase-hybrid autofocus wired directly into the sensor.<br />
                                 Dual native ISO for shadow depth without penalty.<br />
                                 A Venus Engine processor that never falls behind.
@@ -251,7 +251,7 @@ export default function SequenceExperience() {
                         {/* Beat 4: Peak Exploded */}
                         <motion.div
                             style={{ opacity: beat4Opacity, x: beat4X }}
-                            className="absolute left-8 md:left-[10%] bottom-[5%] md:bottom-[8%] max-w-md"
+                            className="absolute left-6 right-6 md:left-[10%] md:right-auto bottom-8 md:bottom-[8%] md:max-w-md"
                         >
                             <div className="text-[#004FD4] font-mono text-[12px] tracking-widest mb-4 uppercase">SENSOR TECHNOLOGY</div>
                             <h2 className="text-[22px] md:text-[26px] lg:text-[32px] font-bold leading-[1.1] mb-6 bg-clip-text text-transparent bg-gradient-to-b from-white to-[#C0C8D6]">
@@ -266,7 +266,7 @@ export default function SequenceExperience() {
                         {/* Beat 5: AF & IBIS */}
                         <motion.div
                             style={{ opacity: beat5Opacity, x: beat5X }}
-                            className="absolute right-8 md:right-[10%] bottom-[5%] md:bottom-[8%] max-w-md text-right flex flex-col items-end"
+                            className="absolute left-6 right-6 md:left-auto md:right-[10%] bottom-8 md:bottom-[8%] md:max-w-md text-right flex flex-col items-end"
                         >
                             <div className="text-[#004FD4] font-mono text-[12px] tracking-widest mb-4 uppercase">INTELLIGENT AF · IBIS</div>
                             <h2 className="text-[22px] md:text-[26px] lg:text-[32px] font-bold leading-[1.1] mb-6">Autofocus that<br /> reads the scene.</h2>
@@ -281,7 +281,7 @@ export default function SequenceExperience() {
                         {/* Beat 6: Reassembly CTA */}
                         <motion.div
                             style={{ opacity: beat6Opacity, y: beat6Y }}
-                            className="absolute left-0 right-0 bottom-[5%] md:bottom-[8%] flex flex-col items-center text-center pointer-events-auto px-4"
+                            className="absolute left-4 right-4 md:left-0 md:right-0 bottom-8 md:bottom-[8%] flex flex-col items-center text-center pointer-events-auto"
                         >
                             <h2 className="text-[35px] md:text-[44px] lg:text-[52px] font-bold leading-tight mb-4">See everything.<br /> Miss nothing.</h2>
                         </motion.div>
@@ -289,14 +289,14 @@ export default function SequenceExperience() {
                         {/* Beat 6: Floating Explore Button */}
                         <motion.div
                             style={{ opacity: beat6Opacity }}
-                            className="fixed bottom-[32px] right-[32px] z-50 pointer-events-auto"
+                            className="fixed bottom-6 right-6 md:bottom-[32px] md:right-[32px] z-50 pointer-events-auto"
                         >
                             <div style={{ padding: '1px' }} className="rounded-full bg-gradient-to-r from-[#004FD4] to-[#0077FF] group cursor-pointer hover:shadow-[0_0_20px_rgba(0,119,255,0.4)] transition-all">
                                 <a
                                     href="/specs"
-                                    className="group relative inline-flex items-center justify-center px-8 py-4 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300"
+                                    className="group relative inline-flex items-center justify-center px-6 py-3 md:px-8 md:py-4 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300"
                                 >
-                                    <span className="relative z-10 text-white">Explore the Lumix S1H</span>
+                                    <span className="relative z-10 text-[14px] md:text-base text-white">Explore the Lumix S1H</span>
                                 </a>
                             </div>
                         </motion.div>

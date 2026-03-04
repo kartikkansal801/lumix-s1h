@@ -2,7 +2,7 @@ import { Star, StarHalf, ThumbsUp, ChevronDown, CheckCircle2 } from "lucide-reac
 
 export default function ReviewsSection() {
     return (
-        <div className="max-w-[1200px] mx-auto px-16 pb-24 text-white">
+        <div className="max-w-[1200px] mx-auto px-6 md:px-16 pb-24 text-white">
             <h2 className="font-sans text-[24px] font-bold tracking-tight text-white/90 mb-8 pb-6">
                 Customer Reviews
             </h2>
@@ -33,7 +33,7 @@ export default function ReviewsSection() {
                 </div>
 
                 {/* Middle: Average Rating */}
-                <div className="flex flex-col items-center justify-center px-12 border-x border-white/10">
+                <div className="flex flex-col items-center justify-center py-8 md:py-0 px-0 md:px-12 border-y md:border-y-0 md:border-x border-white/10">
                     <p className="font-sans text-[14px] text-white/50 mb-1">Average Rating</p>
                     <h1 className="font-sans text-[64px] font-bold text-white/90 leading-none mb-2">4.8</h1>
                     <div className="flex gap-1 mb-2">
@@ -104,8 +104,8 @@ export default function ReviewsSection() {
             </div>
 
             {/* Sub-Header Filters */}
-            <div className="flex flex-wrap items-center justify-between pb-4 mb-8">
-                <div className="flex items-center gap-3">
+            <div className="flex flex-wrap items-center justify-between gap-4 pb-4 mb-8">
+                <div className="flex flex-wrap items-center gap-3">
                     <span className="font-sans text-[14px] font-medium text-white/80">Filter reviews</span>
                     <div className="border border-white/20 rounded-lg px-3 py-1.5 flex items-center gap-2 cursor-pointer hover:border-white/40">
                         <span className="font-sans text-[13px] text-white/60">Rating</span>

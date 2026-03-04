@@ -206,7 +206,7 @@ export default function ExplodedExperience() {
                         <div
                             ref={beatARef}
                             style={{ opacity: 0, transform: 'translateX(-40px)', transition: 'opacity 0.5s ease-out, transform 0.5s ease-out' }}
-                            className="absolute bottom-12 left-16 text-left max-w-[480px]"
+                            className="absolute bottom-12 left-6 right-6 md:left-16 md:right-auto text-left md:max-w-[480px]"
                             id="s2-beat-a"
                         >
                             <div className="text-[#004FD4] font-mono text-[12px] tracking-widest mb-4 uppercase">CINEMATIC PROFILE</div>
@@ -224,7 +224,7 @@ export default function ExplodedExperience() {
                         <div
                             ref={beatBRef}
                             style={{ opacity: 0, transform: 'translateX(-40px)', transition: 'opacity 0.5s ease-out, transform 0.5s ease-out' }}
-                            className="absolute bottom-12 left-16 text-left max-w-[480px]"
+                            className="absolute bottom-12 left-6 right-6 md:left-16 md:right-auto text-left md:max-w-[480px]"
                             id="s2-beat-b"
                         >
                             <div className="text-[#F0A500] font-mono text-[12px] tracking-widest mb-4 uppercase">OPTICAL PERFECTION</div>
@@ -242,7 +242,7 @@ export default function ExplodedExperience() {
                         <div
                             ref={beatCRef}
                             style={{ opacity: 0, transform: 'translateX(-40px)', transition: 'opacity 0.5s ease-out, transform 0.5s ease-out' }}
-                            className="absolute bottom-12 left-16 text-left max-w-[480px]"
+                            className="absolute bottom-12 left-6 right-6 md:left-16 md:right-auto text-left md:max-w-[480px]"
                             id="s2-beat-c"
                         >
                             <div className="text-[#004FD4] font-mono text-[12px] tracking-widest mb-4 uppercase">EXPANDED ARCHITECTURE</div>
@@ -263,7 +263,7 @@ export default function ExplodedExperience() {
                         <div
                             ref={beatDRef}
                             style={{ opacity: 0, transform: 'translateX(40px)', transition: 'opacity 0.5s ease-out, transform 0.5s ease-out' }}
-                            className="absolute bottom-12 right-16 text-right flex flex-col items-end max-w-[480px]"
+                            className="absolute bottom-12 left-6 right-6 md:left-auto md:right-16 text-right flex flex-col items-end md:max-w-[480px]"
                             id="s2-beat-d"
                         >
                             <div className="text-[#004FD4] font-mono text-[12px] tracking-widest mb-4 uppercase">INTEGRATED POWER</div>
