@@ -38,9 +38,12 @@ export default function ImageQualityVideo() {
         video.addEventListener('ended', onEnded);
 
         const observer = new IntersectionObserver((entries) => {
+            const isDesktop = window.innerWidth >= 768;
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
-                    video.play().catch(() => { });
+                    if (isDesktop) {
+                        video.play().catch(() => { });
+                    }
                 } else {
                     video.pause();
                 }
