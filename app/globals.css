@@ -16,21 +16,9 @@ body {
   color: var(--foreground);
 }
 
-/* Faint film grain texture overlay across full page at opacity: 0.02 */
+/* Film grain — disabled: was causing network fetches on each repaint */
 .film-grain {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
-  z-index: 50;
-  opacity: 0.02;
-  /* Force GPU layer — prevents repaint on every scroll frame */
-  will-change: transform;
-  transform: translateZ(0);
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/7/76/1k_Dissolve_Noise_Texture.png");
-  background-repeat: repeat;
+  display: none;
 }
 
 /* Crosshair Grid */
@@ -101,14 +89,19 @@ li {
 .reveal-up {
   opacity: 0;
   transform: translateY(28px);
-  will-change: opacity, transform;
-  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .reveal-up.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Paint isolation: prevents one section's repaint from triggering full-page layout */
+section,
+[id$="-section"] {
+  contain: layout style;
 }
 
 .line-draw::after {
