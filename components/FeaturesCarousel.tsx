@@ -44,7 +44,8 @@ export default function FeaturesCarousel() {
         // Build cards
         SLIDES.forEach(s => {
             const c = document.createElement('div');
-            c.style.cssText = `flex:0 0 ${CARD_VW}vw;width:${CARD_VW}vw;height:60vh;border-radius:16px;overflow:hidden;position:relative;background:#0a0a0a;flex-shrink:0;box-shadow:0 8px 48px rgba(0,0,0,0.55);`;
+            const ratio = isMobile ? '3/4' : '4/5';
+            c.style.cssText = `flex:0 0 ${CARD_VW}vw;width:${CARD_VW}vw;aspect-ratio:${ratio};border-radius:16px;overflow:hidden;position:relative;background:#0a0a0a;flex-shrink:0;box-shadow:0 8px 48px rgba(0,0,0,0.55);`;
             const img = document.createElement('img');
             img.src = s.image;
             img.alt = s.headline;
@@ -151,7 +152,13 @@ export default function FeaturesCarousel() {
         const onTouchMove = (ev: TouchEvent) => m(ev.touches[0].clientX, ev.touches[0].clientY);
         const onTouchEnd = () => e();
         const onKeyDown = (ev: KeyboardEvent) => { playAuto = false; resetAuto(); if (ev.key === 'ArrowRight') goTo(idx + 1); if (ev.key === 'ArrowLeft') goTo(idx - 1); };
-        const onResize = () => { if (track) track.style.transition = 'none'; setTrack(); };
+        let lastWidth = window.innerWidth;
+        const onResize = () => {
+            if (window.innerWidth === lastWidth) return;
+            lastWidth = window.innerWidth;
+            if (track) track.style.transition = 'none';
+            setTrack();
+        };
 
         track.addEventListener('mousedown', onMouseDown);
         window.addEventListener('mousemove', onMouseMove);
