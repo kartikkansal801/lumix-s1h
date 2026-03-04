@@ -905,6 +905,9 @@ video {
 .mt-\[2px\] {
   margin-top: 2px;
 }
+.ml-1 {
+  margin-left: 0.25rem;
+}
 .line-clamp-3 {
   overflow: hidden;
   display: -webkit-box;
@@ -1456,6 +1459,10 @@ video {
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
+.px-10 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
 .pb-10 {
   padding-bottom: 2.5rem;
 }
@@ -1491,6 +1498,9 @@ video {
 }
 .pt-8 {
   padding-top: 2rem;
+}
+.pt-\[100px\] {
+  padding-top: 100px;
 }
 .text-left {
   text-align: left;
@@ -1559,6 +1569,10 @@ video {
   font-size: 1.125rem;
   line-height: 1.75rem;
 }
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
 .font-bold {
   font-weight: 700;
 }
@@ -1599,6 +1613,9 @@ video {
   letter-spacing: 0.05em;
 }
 .tracking-widest {
+  letter-spacing: 0.1em;
+}
+.tracking-\[0\.1em\] {
   letter-spacing: 0.1em;
 }
 .text-\[\#004FD4\] {
@@ -1661,6 +1678,9 @@ video {
 .text-white\/90 {
   color: rgb(255 255 255 / 0.9);
 }
+.text-white\/85 {
+  color: rgb(255 255 255 / 0.85);
+}
 .underline {
   text-decoration-line: underline;
 }
@@ -1695,6 +1715,11 @@ video {
   --tw-shadow-colored: 0 0 15px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
+.shadow-\[0_4px_14px_0_rgba\(0\2c 79\2c 212\2c 0\.39\)\] {
+  --tw-shadow: 0 4px 14px 0 rgba(0,79,212,0.39);
+  --tw-shadow-colored: 0 4px 14px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
 .blur {
   --tw-blur: blur(8px);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
@@ -1712,6 +1737,10 @@ video {
 }
 .backdrop-blur-xl {
   --tw-backdrop-blur: blur(24px);
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+.backdrop-blur-2xl {
+  --tw-backdrop-blur: blur(40px);
   backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
 }
 .transition {
@@ -2166,6 +2195,10 @@ li {
 
   .md\:gap-\[80px\] {
     gap: 80px;
+  }
+
+  .md\:gap-4 {
+    gap: 1rem;
   }
 
   .md\:overflow-visible {
