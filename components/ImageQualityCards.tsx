@@ -139,7 +139,7 @@ export default function ImageQualityCards() {
                                         aspectRatio: '4/5',
                                         position: 'relative'
                                     }}>
-                                        <img className="parallax-img" src={feat.image} alt={feat.headline} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', willChange: 'transform' }} />
+                                        <img className="parallax-img" src={feat.image} alt={feat.headline} loading="lazy" decoding="async" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', willChange: 'transform' }} />
                                     </div>
                                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '14px', padding: '0 4px', justifyContent: 'center' }}>
                                         <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
@@ -195,7 +195,7 @@ export default function ImageQualityCards() {
                                     aspectRatio: '4/5',
                                     position: 'relative'
                                 }}>
-                                    <img className="parallax-img" src={feat.image} alt={feat.headline} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', willChange: 'transform' }} />
+                                    <img className="parallax-img" src={feat.image} alt={feat.headline} loading="lazy" decoding="async" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', willChange: 'transform' }} />
                                 </div>
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '14px', padding: '0 4px', justifyContent: 'flex-start' }}>
                                     <svg width="18" height="18" viewBox="0 0 18 18" fill="none">

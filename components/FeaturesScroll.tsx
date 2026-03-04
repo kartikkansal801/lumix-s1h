@@ -208,6 +208,8 @@ export default function FeaturesScroll() {
                                 className="feat-img"
                                 src={item.img}
                                 alt={item.eyebrow}
+                                loading="lazy"
+                                decoding="async"
                                 style={{
                                     position: "absolute",
                                     inset: 0,

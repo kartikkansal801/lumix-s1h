@@ -48,7 +48,7 @@ export default function ImageQualityVideo() {
                     video.pause();
                 }
             });
-        }, { threshold: 0.5 });
+        }, { threshold: 0 }); // threshold:0 fires as soon as any pixel is visible (more reliable on mobile)
 
         observer.observe(video);
 
@@ -116,7 +116,7 @@ export default function ImageQualityVideo() {
                     src={`${BASE_PATH}/project6/video.mp4`}
                     muted
                     playsInline
-                    preload="metadata"
+                    preload="auto"
                     style={{ width: '100%', display: 'block', aspectRatio: '16/9', objectFit: 'cover' }}
                 />
 
