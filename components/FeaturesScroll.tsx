@@ -2,36 +2,38 @@
 
 import { useEffect } from "react";
 
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 const FEAT_DATA = [
     {
         eyebrow: "Image Quality",
         title: "Full-Frame\nBSI CMOS",
         body: "A 24.2MP full-frame back-side illuminated sensor captures extraordinary detail in every frame — from cinematic shadow depth to blazing highlights — with minimal noise even in the most demanding low-light conditions.",
-        img: "/project5/1.jpg",
+        img: `${BASE_PATH}/project5/1.jpg`,
     },
     {
         eyebrow: "Stabilisation",
         title: "5-Axis\nDual I.S. 2",
         body: "With up to 6.5 stops of compensation, the S1H's in-body stabilisation works in concert with compatible lenses to virtually eliminate camera shake — freeing you to shoot handheld with cinema-grade steadiness.",
-        img: "/project5/2.png",
+        img: `${BASE_PATH}/project5/2.png`,
     },
     {
         eyebrow: "Cinema",
         title: "6K Cinema\n4:2:2 10-bit",
         body: "Shoot 6K, V-Log, 4:2:2 10-bit internally with no recording limit. A rich colour depth gives colourists the latitude they need to sculpt the final look — from commercial precision to arthouse expression.",
-        img: "/project5/3.png",
+        img: `${BASE_PATH}/project5/3.png`,
     },
     {
         eyebrow: "Viewfinder",
         title: "OLED EVF\n5.76M-dot",
         body: "A class-leading 5.76-million-dot OLED viewfinder delivers a crystal-clear, lag-free preview that behaves like optical glass. A tilting 3.0\" touchscreen ensures framing freedom in any orientation.",
-        img: "/project5/4.jpg",
+        img: `${BASE_PATH}/project5/4.jpg`,
     },
     {
         eyebrow: "Build",
         title: "Weather-Sealed\nMagnesium Alloy",
         body: "Machined from a full magnesium alloy chassis and sealed against dust and splash, the S1H operates in temperatures down to –10°C. Built for productions that don't stop for weather.",
-        img: "/project5/5.png",
+        img: `${BASE_PATH}/project5/5.png`,
     },
 ];
 

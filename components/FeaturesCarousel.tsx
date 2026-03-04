@@ -2,12 +2,14 @@
 
 import { useRef, useEffect } from "react";
 
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 const SLIDES = [
-    { eyebrow: 'Image Quality', headline: 'Full-Frame\nBSI CMOS', image: '/project5/1.jpg', description: '24.2MP back-illuminated full-frame sensor. Phase-hybrid AF. 14 stops dynamic range.' },
-    { eyebrow: 'Stabilisation', headline: '5-Axis\nDual I.S. 2', image: '/project5/2.png', description: 'Up to 6.5 stops combined stabilisation. Shoot handheld at any focal length.' },
-    { eyebrow: 'Cinema', headline: '6K Cinema\n4:2:2 10-bit', image: '/project5/3.png', description: 'Unlimited 6K Cinema recording. V-Log L. HLG. No crop. No recording limit.' },
-    { eyebrow: 'Viewfinder', headline: 'OLED EVF\n5.76M-dot', image: '/project5/4.jpg', description: '5.76M-dot OLED EVF 0.78x magnification. Free-angle 3.0 inch touch LCD.' },
-    { eyebrow: 'Build', headline: 'Weather-Sealed\nMagnesium Alloy', image: '/project5/5.png', description: 'Precision magnesium alloy chassis. Dust, splash, freeze-resistant to -10C.' },
+    { eyebrow: 'Image Quality', headline: 'Full-Frame\nBSI CMOS', image: `${BASE_PATH}/project5/1.jpg`, description: '24.2MP back-illuminated full-frame sensor. Phase-hybrid AF. 14 stops dynamic range.' },
+    { eyebrow: 'Stabilisation', headline: '5-Axis\nDual I.S. 2', image: `${BASE_PATH}/project5/2.png`, description: 'Up to 6.5 stops combined stabilisation. Shoot handheld at any focal length.' },
+    { eyebrow: 'Cinema', headline: '6K Cinema\n4:2:2 10-bit', image: `${BASE_PATH}/project5/3.png`, description: 'Unlimited 6K Cinema recording. V-Log L. HLG. No crop. No recording limit.' },
+    { eyebrow: 'Viewfinder', headline: 'OLED EVF\n5.76M-dot', image: `${BASE_PATH}/project5/4.jpg`, description: '5.76M-dot OLED EVF 0.78x magnification. Free-angle 3.0 inch touch LCD.' },
+    { eyebrow: 'Build', headline: 'Weather-Sealed\nMagnesium Alloy', image: `${BASE_PATH}/project5/5.png`, description: 'Precision magnesium alloy chassis. Dust, splash, freeze-resistant to -10C.' },
 ];
 
 export default function FeaturesCarousel() {

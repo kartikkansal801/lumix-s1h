@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { useScroll, useTransform, motion } from "framer-motion";
 
 const TOTAL_FRAMES_S2 = 147;
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
 export default function ExplodedExperience() {
     const containerRef = useRef<HTMLDivElement>(null);
@@ -71,7 +72,7 @@ export default function ExplodedExperience() {
         for (let i = 0; i < TOTAL_FRAMES_S2; i++) {
             const img = new Image();
             const paddedIndex = String(i + 1).padStart(3, '0');
-            img.src = `/project3/ezgif-frame-${paddedIndex}.jpg`;
+            img.src = `${BASE_PATH}/project3/ezgif-frame-${paddedIndex}.jpg`;
 
             img.onload = () => {
                 framesRef.current[i] = img;
@@ -85,7 +86,7 @@ export default function ExplodedExperience() {
             };
 
             img.onerror = () => {
-                console.error(`Failed to load: /project3/ezgif-frame-${paddedIndex}.jpg`);
+                console.error(`Failed to load: ${BASE_PATH}/project3/ezgif-frame-${paddedIndex}.jpg`);
                 // increment anyway to prevent load halt
                 loaded++;
                 setLoadedCount(loaded);

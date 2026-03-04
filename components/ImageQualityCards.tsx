@@ -2,13 +2,15 @@
 
 import { useEffect, useRef } from "react";
 
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 const IQ_FEATURES = [
     {
         eyebrow: 'Dynamic Range',
         headline: '14+ Stops.\nNothing lost.',
         body: 'V-Log/V-Gamut captures everything from the deepest shadows to blown highlights in a single exposure. <strong>Over 14 stops of dynamic range</strong> — rivalling dedicated cinema cameras like the Panasonic VariCam. Latitude that lets you push the grade as far as you want in post.',
         caption: 'Shot in V-Log L · Lumix S1H',
-        image: '/project7/Screenshot 2026-03-03 at 21-48-51 Juvisy - S1H Vincent N.Van Flickr.png',
+        image: `${BASE_PATH}/project7/Screenshot 2026-03-03 at 21-48-51 Juvisy - S1H Vincent N.Van Flickr.png`,
         side: 'right', // text left, image right
     },
     {
@@ -16,7 +18,7 @@ const IQ_FEATURES = [
         headline: 'Dual Native ISO.\nDarkness defeated.',
         body: 'Two dedicated circuits per pixel — <strong>ISO 640 and ISO 4000</strong> as true native bases. Each is clean, noise-free, with full colour fidelity. Push further to ISO 51,200. Extend to 204,800. Shoot in near-darkness without compromise.',
         caption: 'Dual Native ISO · Lumix S1H',
-        image: '/project7/Screenshot 2026-03-03 at 21-49-07 Watching the Sunset Zeiss C_Y Sonnar 135mm f_2.8 (@f_8) Mattia Visintini Flickr.png',
+        image: `${BASE_PATH}/project7/Screenshot 2026-03-03 at 21-49-07 Watching the Sunset Zeiss C_Y Sonnar 135mm f_2.8 (@f_8) Mattia Visintini Flickr.png`,
         side: 'left', // image left, text right
     },
     {
@@ -24,7 +26,7 @@ const IQ_FEATURES = [
         headline: '1 Billion Colors.\n4:2:2 10-bit.',
         body: 'Internal 4:2:2 10-bit recording delivers <strong>~128× the colour information</strong> of standard 8-bit footage. Every skin tone, every gradient, every subtle shift preserved at the source. Radical colour grading in post — turn daylight into night, summer into winter.',
         caption: '4:2:2 10-bit internal · Lumix S1H',
-        image: '/project7/Screenshot 2026-03-03 at 21-50-57 Sunrise Wynnum Pier Wynnum Pier Brisbane Australia Lumi… Flickr.png',
+        image: `${BASE_PATH}/project7/Screenshot 2026-03-03 at 21-50-57 Sunrise Wynnum Pier Wynnum Pier Brisbane Australia Lumi… Flickr.png`,
         side: 'center', // image centered top, text centered below
     },
     {
@@ -32,7 +34,7 @@ const IQ_FEATURES = [
         headline: '6K Full-Frame.\nEvery aspect ratio.',
         body: '<strong>6K open gate (3:2), 5.9K 16:9, C4K, 4K 4:3 anamorphic</strong> — one camera covers every format and aspect ratio used in professional cinema. No crop. No compromise. Switch formats without changing lenses.',
         caption: '6K Open Gate · Lumix S1H',
-        image: '/project7/Screenshot 2026-03-03 at 22-04-18 Casting a shadow by BobR25 ePHOTOzine.png',
+        image: `${BASE_PATH}/project7/Screenshot 2026-03-03 at 22-04-18 Casting a shadow by BobR25 ePHOTOzine.png`,
         side: 'right',
     },
     {
@@ -40,7 +42,7 @@ const IQ_FEATURES = [
         headline: '96MP stills.\nSensor-shift precision.',
         body: 'Composites 8 sensor-shift exposures into a single <strong>96MP RAW file at 12,000 × 8,000px</strong>. When 24.2MP isn\'t enough — for print, billboard, or fine-art reproduction. No additional lens required.',
         caption: 'High Resolution Mode · Lumix S1H',
-        image: '/project7/Screenshot 2026-03-03 at 22-05-01 Cold Winter Morning by Mannographer ePHOTOzine.png',
+        image: `${BASE_PATH}/project7/Screenshot 2026-03-03 at 22-05-01 Cold Winter Morning by Mannographer ePHOTOzine.png`,
         side: 'left',
     },
 ];

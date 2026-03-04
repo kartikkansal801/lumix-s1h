@@ -7,15 +7,17 @@ import Footer from "@/components/Footer";
 import ReviewsSection from "@/components/ReviewsSection";
 import { BadgePercent, BadgeCheck, Truck, ShieldCheck, ChevronDown, ChevronRight, AlertCircle, Camera, ChevronUp, Film, Aperture, Palette, Wind, Activity, Shield, ChevronLeft } from "lucide-react";
 
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 const VARIANTS = [
     { label: 'Body Only', price: 249990, priceDisplay: '₹2,49,990' },
     { label: 'With 24-105mm Lens', price: 379990, priceDisplay: '₹3,79,990' },
 ];
 
 const ACCESSORIES = [
-    { name: 'DMW-BLJ31 Battery', price: 8990, priceDisplay: '₹8,990', image: '/project5/1.jpg' },
-    { name: 'DMW-BTC15 Charger', price: 5990, priceDisplay: '₹5,990', image: '/project5/2.png' },
-    { name: 'Shoulder Strap DMW-SSDC', price: 2990, priceDisplay: '₹2,990', image: '/project5/3.jpg' },
+    { name: 'DMW-BLJ31 Battery', price: 8990, priceDisplay: '₹8,990', image: `${BASE_PATH}/project5/1.jpg` },
+    { name: 'DMW-BTC15 Charger', price: 5990, priceDisplay: '₹5,990', image: `${BASE_PATH}/project5/2.png` },
+    { name: 'Shoulder Strap DMW-SSDC', price: 2990, priceDisplay: '₹2,990', image: `${BASE_PATH}/project5/3.jpg` },
 ];
 
 export default function OrderPage() {
@@ -26,9 +28,9 @@ export default function OrderPage() {
     // Auto-sliding image carousel state
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const images = [
-        '/project9/Whisk_0ee58d8ba7a8cc6b275447e55a0ed358dr(1).png',
-        '/project9/Whisk_73dc9cfafc2b0c2af284ed9cab39aa42dr(1).png',
-        '/project9/Whisk_e4aa15e4d710733a5864df08488af52adr.png'
+        `${BASE_PATH}/project9/Whisk_0ee58d8ba7a8cc6b275447e55a0ed358dr(1).png`,
+        `${BASE_PATH}/project9/Whisk_73dc9cfafc2b0c2af284ed9cab39aa42dr(1).png`,
+        `${BASE_PATH}/project9/Whisk_e4aa15e4d710733a5864df08488af52adr.png`
     ];
 
     useEffect(() => {
@@ -256,7 +258,7 @@ export default function OrderPage() {
                         variant: VARIANTS[selectedVariant].label,
                         price: VARIANTS[selectedVariant].priceDisplay,
                         priceNum: VARIANTS[selectedVariant].price,
-                        image: '/project5/1.jpg',
+                        image: `${BASE_PATH}/project5/1.jpg`,
                     })} style={{
                         width: '100%', padding: '17px',
                         background: '#004FD4', color: '#fff',

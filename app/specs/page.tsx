@@ -4,6 +4,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Store, Truck, MessageCircle } from "lucide-react";
 
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 const SPECS = [
     {
         category: 'Sensor',
@@ -134,7 +136,7 @@ export default function SpecsPage() {
                 {/* Image Side */}
                 <div style={{ flex: 1, display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
                     <img
-                        src="/project8/8096354313.jpg_1_-removebg-preview(1).png"
+                        src={`${BASE_PATH}/project8/8096354313.jpg_1_-removebg-preview(1).png`}
                         alt="Lumix S1H Camera"
                         style={{
                             maxWidth: '460px', width: '100%', height: 'auto',

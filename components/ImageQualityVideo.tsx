@@ -2,7 +2,10 @@
 
 import { useRef, useEffect, useState } from "react";
 
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 export default function ImageQualityVideo() {
+
     const videoRef = useRef<HTMLVideoElement>(null);
     const timerRef = useRef<HTMLDivElement>(null);
     const [isPlaying, setIsPlaying] = useState(false);
@@ -110,7 +113,7 @@ export default function ImageQualityVideo() {
                 <video
                     ref={videoRef}
                     id="iq-video"
-                    src="/project6/video.mp4"
+                    src={`${BASE_PATH}/project6/video.mp4`}
                     muted
                     playsInline
                     preload="metadata"

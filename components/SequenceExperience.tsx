@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { useScroll, useTransform, motion } from "framer-motion";
 
 const TOTAL_FRAMES = 147;
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
 export default function SequenceExperience() {
     const containerRef = useRef<HTMLDivElement>(null);
@@ -50,7 +51,7 @@ export default function SequenceExperience() {
         for (let i = 0; i < TOTAL_FRAMES; i++) {
             const img = new Image();
             const paddedIndex = String(i + 1).padStart(3, '0');
-            img.src = `/project1/ezgif-frame-${paddedIndex}.jpg`;
+            img.src = `${BASE_PATH}/project1/ezgif-frame-${paddedIndex}.jpg`;
 
             img.onload = () => {
                 framesRef.current[i] = img;
@@ -64,7 +65,7 @@ export default function SequenceExperience() {
             };
 
             img.onerror = () => {
-                console.error(`Failed to load: /project1/ezgif-frame-${paddedIndex}.jpg`);
+                console.error(`Failed to load: ${BASE_PATH}/project1/ezgif-frame-${paddedIndex}.jpg`);
                 // increment anyway to prevent load halt
                 loaded++;
                 setLoadedCount(loaded);
