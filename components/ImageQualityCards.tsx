@@ -72,7 +72,21 @@ export default function ImageQualityCards() {
 
         // ── IMAGE PARALLAX ────────────────────────────────────────────────────────
         const imgCards = document.querySelectorAll('#iq-features-section img.parallax-img');
+        let isMobile = window.innerWidth < 768;
+
+        const onResize = () => {
+            isMobile = window.innerWidth < 768;
+            if (isMobile) {
+                imgCards.forEach(img => {
+                    (img as HTMLElement).style.transform = `translateY(0px)`;
+                });
+            }
+        };
+        window.addEventListener('resize', onResize, { passive: true });
+
         const onScroll = () => {
+            if (isMobile) return; // Disable parallax on mobile to prevent address bar jitter!
+
             // Use requestAnimationFrame for smoother parallax
             window.requestAnimationFrame(() => {
                 imgCards.forEach(img => {
@@ -92,6 +106,7 @@ export default function ImageQualityCards() {
         return () => {
             revObs.disconnect();
             window.removeEventListener('scroll', onScroll);
+            window.removeEventListener('resize', onResize);
         };
     }, []);
 

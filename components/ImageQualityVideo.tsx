@@ -114,7 +114,7 @@ export default function ImageQualityVideo() {
                     muted
                     playsInline
                     preload="metadata"
-                    style={{ width: '100%', display: 'block', aspectRatio: '16/9', objectFit: 'cover' }}
+                    style={{ width: '100%', height: 'auto', display: 'block' }}
                 />
 
                 {/* Timer pill */}
