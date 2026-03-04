@@ -44,8 +44,8 @@ export default function FeaturesCarousel() {
         // Build cards
         SLIDES.forEach(s => {
             const c = document.createElement('div');
-            const ratio = isMobile ? '3/4' : '4/5';
-            c.style.cssText = `flex:0 0 ${CARD_VW}vw;width:${CARD_VW}vw;aspect-ratio:${ratio};border-radius:16px;overflow:hidden;position:relative;background:#0a0a0a;flex-shrink:0;box-shadow:0 8px 48px rgba(0,0,0,0.55);`;
+            const sizeCSS = isMobile ? 'aspect-ratio:3/4;' : 'height:60vh;';
+            c.style.cssText = `flex:0 0 ${CARD_VW}vw;width:${CARD_VW}vw;${sizeCSS}border-radius:16px;overflow:hidden;position:relative;background:#0a0a0a;flex-shrink:0;box-shadow:0 8px 48px rgba(0,0,0,0.55);`;
             const img = document.createElement('img');
             img.src = s.image;
             img.alt = s.headline;
