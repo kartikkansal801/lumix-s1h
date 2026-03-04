@@ -6,12 +6,15 @@ export default function FeaturesIntro() {
     useEffect(() => {
         const featH = document.getElementById('features-headline');
         if (featH) {
-            new IntersectionObserver(entries => {
+            const observer = new IntersectionObserver(entries => {
                 if (entries[0].isIntersecting) {
                     featH.style.opacity = '1';
                     featH.style.transform = 'translateY(0)';
+                    // CRITICAL FIX: Disconnect immediately to prevent re-triggering on scroll up
+                    observer.disconnect();
                 }
-            }, { threshold: 0.3 }).observe(featH);
+            }, { threshold: 0.2 });
+            observer.observe(featH);
         }
     }, []);
 

@@ -35,10 +35,11 @@ export default function GlobalAnimations() {
                 if (e.isIntersecting) {
                     // No setTimeout — apply immediately, CSS transition handles timing
                     (e.target as HTMLElement).classList.add('visible');
+                    // CRITICAL FIX: Unobserve immediately to prevent "come and go" re-triggering on iOS scroll
                     revealObs.unobserve(e.target);
                 }
             });
-        }, { threshold: 0.15 });
+        }, { threshold: 0.1 });
 
         document.querySelectorAll('.reveal-up').forEach(el => {
             if (!el.classList.contains('reveal-init')) {

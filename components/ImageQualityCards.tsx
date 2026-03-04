@@ -58,10 +58,11 @@ export default function ImageQualityCards() {
                         (entry.target as HTMLElement).style.opacity = '1';
                         (entry.target as HTMLElement).style.transform = 'translateY(0)';
                     }, (i % 3) * 80);
+                    // CRITICAL FIX: Unobserve immediately to prevent "come and go" re-triggering on iOS scroll
                     revObs.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.2 });
+        }, { threshold: 0.1 });
 
         revEls.forEach(el => {
             (el as HTMLElement).style.opacity = '0';
