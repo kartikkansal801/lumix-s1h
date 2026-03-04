@@ -57,7 +57,7 @@ export default function QuoteSection() {
                 letterSpacing: '-0.02em',
                 margin: 0
             }}>
-                "The Lumix S1H isn't just a camera.<br /> It's a statement."
+                &quot;The Lumix S1H isn&apos;t just a camera.<br /> It&apos;s a statement.&quot;
             </p >
 
             {/* Attribution */}
